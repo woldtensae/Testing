@@ -10,7 +10,7 @@
 
 
 	<!-- <mvc:annotation-driven /> -->
-	<context:component-scan base-package="com.test" />
+	<context:component-scan base-package="mum.test" />
 	<mvc:annotation-driven/>
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
