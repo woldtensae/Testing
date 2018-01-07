@@ -20,8 +20,8 @@ public class ProductRepositoryImpl implements ProductRepository{
 		productData.put(product3.getId(), product3);
 		return productData;
 	}
-	
-	
-	
-
+	@Override
+	public Product getProduct(Long id) {
+		return productData.get(id);
+	}
 }

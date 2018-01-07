@@ -9,5 +9,6 @@ import mum.test.domain.Product;
 @Repository
 public interface ProductRepository {
 	Map<Long, Product> getProducts();
+	Product getProduct(Long id);
 
 }

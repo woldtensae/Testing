@@ -19,4 +19,9 @@ public class ProductServiceImpl implements ProductService{
 		return productRepostory.getProducts();
 	}
 
+	@Override
+	public Product product(Long id) {
+		return productRepostory.getProduct(id);
+	}
+
 }

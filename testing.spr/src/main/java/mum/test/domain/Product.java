@@ -10,6 +10,7 @@ public class Product implements Serializable{
 	private long id;
 	private String itemName;
 	private double price;
+	private Category category;
 	
 	public Product(long id, String itemName, double price) {
 		super();
@@ -34,6 +35,12 @@ public class Product implements Serializable{
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 	
 
