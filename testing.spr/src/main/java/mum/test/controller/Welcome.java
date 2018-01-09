@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import mum.test.service.CategoryService;
 import mum.test.service.ProductService;
 
 @RequestMapping(value="/")
@@ -15,6 +16,8 @@ import mum.test.service.ProductService;
 public class Welcome {
 	@Autowired
 	ProductService productService;
+	@Autowired
+	CategoryService categoryService;
 	//method level mapping must exist for this to work even if we have class level mapping
 	@RequestMapping
 	public String welcome() {
@@ -37,5 +40,11 @@ public class Welcome {
 		model.addAttribute("product", productService.product(id));
 		return "detail";
 	}
+	@RequestMapping(value="/add", method=RequestMethod.GET)
+	public String addProductForm(Model model) {
+		model.addAttribute("categories", categoryService.findAll());
+		return "addProductForm";
+	}
+	
 	
 }
