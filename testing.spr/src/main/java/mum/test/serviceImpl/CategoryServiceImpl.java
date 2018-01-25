@@ -1,13 +1,14 @@
 package mum.test.serviceImpl;
 
-import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import mum.test.domain.Category;
 import mum.test.repository.CategoryRepository;
 import mum.test.service.CategoryService;
-
+@Service
 public class CategoryServiceImpl implements CategoryService{
 	@Autowired
 	CategoryRepository categoryRepository;
@@ -17,7 +18,7 @@ public class CategoryServiceImpl implements CategoryService{
 	}
 
 	@Override
-	public List<Category> findAll() {
+	public Map<Long, Category> findAll() {
 		return categoryRepository.findALL();
 	}
 

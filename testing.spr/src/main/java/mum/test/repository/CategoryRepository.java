@@ -1,10 +1,13 @@
 package mum.test.repository;
 
-import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
 
 import mum.test.domain.Category;
 
+@Repository
 public interface CategoryRepository {
 	Category findOne(Long id);
-	List<Category> findALL();
+	Map<Long, Category> findALL();
 }

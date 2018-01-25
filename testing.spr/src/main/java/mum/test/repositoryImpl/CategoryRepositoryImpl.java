@@ -1,7 +1,8 @@
 package mum.test.repositoryImpl;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -10,24 +11,24 @@ import mum.test.repository.CategoryRepository;
 
 @Repository
 public class CategoryRepositoryImpl implements CategoryRepository{
-	private List<Category> categories = new ArrayList<Category>();
+	private Map<Long,Category> categories = new HashMap<Long, Category>();
 	
 	CategoryRepositoryImpl(){
 		Category phone = new Category(1, "phone");
 		Category food = new Category(2, "food");
 		Category computers = new Category(3, "computers");
-		categories.add(phone);
-		categories.add(food);
-		categories.add(computers);
+		categories.put(phone.getId(),phone);
+		categories.put(food.getId(),food);
+		categories.put(computers.getId(), computers);
 	}
 	
 	@Override
 	public Category findOne(Long id) {
-		return (Category)categories.stream().filter(e -> id == e.getId());
+		return categories.get(id);
 	}
 
 	@Override
-	public List<Category> findALL() {
+	public Map<Long, Category> findALL() {
 		return categories;
 	}
 

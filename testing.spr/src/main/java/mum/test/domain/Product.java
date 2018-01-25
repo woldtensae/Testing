@@ -11,6 +11,7 @@ public class Product implements Serializable{
 	private String itemName;
 	private double price;
 	private Category category;
+	public Product() {}
 	
 	public Product(long id, String itemName, double price) {
 		super();

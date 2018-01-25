@@ -1,11 +1,11 @@
 package mum.test.service;
 
-import java.util.List;
+import java.util.Map;
 
 import mum.test.domain.Category;
 
 public interface CategoryService {
 	Category findOne(long id);
-	List<Category> findAll();
+	Map<Long, Category> findAll();
 
 }
