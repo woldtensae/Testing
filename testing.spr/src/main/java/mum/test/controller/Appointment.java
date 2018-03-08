@@ -15,15 +15,15 @@ import mum.test.service.ProductService;
 
 @RequestMapping(value="/")
 @Controller
-public class Welcome {
+public class Appointment {
 	@Autowired
 	ProductService productService;
 	@Autowired
 	CategoryService categoryService;
 	//method level mapping must exist for this to work even if we have class level mapping
 	@RequestMapping
-	public String welcome() {
-		return "welcome";
+	public String app() {
+		return "app";
 	}
 	
 	@RequestMapping(value="/products", method=RequestMethod.GET)
